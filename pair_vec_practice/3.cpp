@@ -14,12 +14,20 @@ using namespace std;
 vector<pair<string,int>> inventory;
 
 void addItem(string name, int quantity) {
-    // hint : push name and quantity as pair
+    // hint : push name and quantity as pair 
+    inventory.push_back({name, quantity});
 }
 
 void printLowStock(int threshold) {
     // hint : loop through inventory
-    // print items where .second < threshold
+    // print items where .second < threshold 
+    for(auto k: inventory)
+    {
+        if(k.second < threshold)
+        {
+            cout<<k.first<<endl;
+        }
+    }
 }
 
 int main(){
@@ -32,19 +40,19 @@ int main(){
     int threshold; cin >> threshold;
     printLowStock(threshold);
 }
-```
+// ```
 
----
+// ---
 
-## Q4 — Phone Book 🟡
-```
-A name number → Add contact
-D name        → Delete contact
-S name        → Search (print -1 if not found)
+// ## Q4 — Phone Book 🟡
+// ```
+// A name number → Add contact
+// D name        → Delete contact
+// S name        → Search (print -1 if not found)
 
-Input:              Output:
-4                   12345
-A Alice 12345
-A Bob 67890
-S Alice
-D Bob
+// Input:              Output:
+// 4                   12345
+// A Alice 12345
+// A Bob 67890
+// S Alice
+// D Bob
